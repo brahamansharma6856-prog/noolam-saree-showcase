@@ -182,7 +182,7 @@ export const STYLED_LOOKS: StyledLook[] = [
     title: 'Ivory Elephant',
     colorTheme: 'Ivory Cream & Antique Gold',
     description: 'Regal south Indian wedding styling centered on raw katan silk paired with 22kt temple jewelry.',
-    modelImage: '/assets/clean_try_look_model.png',
+    modelImage: '/assets/look_model_1.png',
     saree: {
       brand: 'NOOLAM — SAREE',
       name: 'Ivory Kanjivaram with Elephant Border',
@@ -226,42 +226,42 @@ export const STYLED_LOOKS: StyledLook[] = [
     title: 'Mayil Sapphire',
     colorTheme: 'Peacock Blue & Magenta Korvai',
     description: 'Vibrant peacock plumage blue with heavy korvai magenta border and contrasting polki collar.',
-    modelImage: '/assets/exact_silk_card_1.png',
+    modelImage: '/assets/look_model_2.png',
     saree: {
       brand: 'NOOLAM — SAREE',
       name: 'Mayil Sapphire Korvai Silk Saree',
       price: 89800,
-      image: '/assets/exact_silk_card_1.png'
+      image: '/assets/thumb_saree_teal.png'
     },
     blouse: {
       brand: 'NOOLAM — BLOUSE',
       name: 'Magenta Raw Silk Brocade Blouse',
       price: 15200,
-      image: '/assets/exact_blouse_detail_center.png'
+      image: '/assets/thumb_blouse.png'
     },
     choker: {
       brand: 'NOOLAM — CHOKER',
       name: 'Kundan Peacock Collar Choker',
       price: 12500,
-      image: '/assets/exact_mood_2.png'
+      image: '/assets/thumb_choker.png'
     },
     jhumkas: {
       brand: 'NOOLAM — JHUMKAS',
       name: 'Sapphire & Pearl Chandbali Drops',
       price: 9500,
-      image: '/assets/exact_mood_5.png'
+      image: '/assets/thumb_jhumkas.png'
     },
     ottiyanam: {
       brand: 'NOOLAM — OTTIYANAM',
       name: 'Peacock Motif Carved Waist Belt',
       price: 18000,
-      image: '/assets/exact_mood_1.png'
+      image: '/assets/thumb_ottiyanam.png'
     },
     bangles: {
       brand: 'NOOLAM — BANGLES',
       name: 'Dual Tone Gold Kangan Stack',
       price: 11400,
-      image: '/assets/exact_mood_6.png'
+      image: '/assets/thumb_bangles.png'
     }
   },
   {
@@ -270,42 +270,42 @@ export const STYLED_LOOKS: StyledLook[] = [
     title: 'Rani Kalyanam',
     colorTheme: 'Auspicious Magenta & Pure Gold',
     description: 'The quintessential Tamil muhurtham drape with pure silver dipped in 24k gold zari.',
-    modelImage: '/assets/exact_silk_card_2.png',
+    modelImage: '/assets/look_model_3.png',
     saree: {
       brand: 'NOOLAM — SAREE',
       name: 'Kalyana Rani Magenta Silk Saree',
       price: 94600,
-      image: '/assets/exact_silk_card_2.png'
+      image: '/assets/thumb_saree_brocade.png'
     },
     blouse: {
       brand: 'NOOLAM — BLOUSE',
       name: 'Deep Crimson Velvet Blouse',
       price: 16500,
-      image: '/assets/exact_blouse_detail_center.png'
+      image: '/assets/thumb_blouse_gold.png'
     },
     choker: {
       brand: 'NOOLAM — CHOKER',
       name: 'Padakkam Ruby Temple Choker',
       price: 14000,
-      image: '/assets/exact_mood_3.png'
+      image: '/assets/thumb_choker.png'
     },
     jhumkas: {
       brand: 'NOOLAM — JHUMKAS',
       name: 'Tiered Heritage Temple Jhumkas',
       price: 11000,
-      image: '/assets/exact_mood_4.png'
+      image: '/assets/thumb_jhumkas.png'
     },
     ottiyanam: {
       brand: 'NOOLAM — OTTIYANAM',
       name: 'Royal Kamarbandh in Kemp Stones',
       price: 19500,
-      image: '/assets/exact_mood_2.png'
+      image: '/assets/thumb_ottiyanam.png'
     },
     bangles: {
       brand: 'NOOLAM — BANGLES',
       name: 'Gajra Valayal in Gold & Emerald',
       price: 12500,
-      image: '/assets/exact_mood_1.png'
+      image: '/assets/thumb_bangles.png'
     }
   },
   {
@@ -314,42 +314,42 @@ export const STYLED_LOOKS: StyledLook[] = [
     title: 'Emerald Gopuram',
     colorTheme: 'Forest Green & Deep Gold',
     description: 'Deep sacred green echoing temple sanctums with pure gold yaali border work.',
-    modelImage: '/assets/exact_silk_card_3.png',
+    modelImage: '/assets/look_model_4.png',
     saree: {
       brand: 'NOOLAM — SAREE',
       name: 'Kanchi Emerald Yaali Saree',
       price: 82400,
-      image: '/assets/exact_silk_card_3.png'
+      image: '/assets/thumb_saree_check.png'
     },
     blouse: {
       brand: 'NOOLAM — BLOUSE',
       name: 'Tissue Gold Silk Blouse',
       price: 13800,
-      image: '/assets/exact_blouse_detail_center.png'
+      image: '/assets/thumb_blouse_gold.png'
     },
     choker: {
       brand: 'NOOLAM — CHOKER',
       name: 'Emerald Slice Heritage Haram',
       price: 11500,
-      image: '/assets/exact_mood_4.png'
+      image: '/assets/thumb_choker.png'
     },
     jhumkas: {
       brand: 'NOOLAM — JHUMKAS',
       name: 'Temple Bell Ear Drops',
       price: 8900,
-      image: '/assets/exact_mood_1.png'
+      image: '/assets/thumb_jhumkas.png'
     },
     ottiyanam: {
       brand: 'NOOLAM — OTTIYANAM',
       name: 'Gopuram Ingot Waist Belt',
       price: 16500,
-      image: '/assets/exact_mood_5.png'
+      image: '/assets/thumb_ottiyanam.png'
     },
     bangles: {
       brand: 'NOOLAM — BANGLES',
       name: 'Traditional Kada Bangles',
       price: 10800,
-      image: '/assets/exact_mood_2.png'
+      image: '/assets/thumb_bangles.png'
     }
   },
   {
@@ -358,42 +358,42 @@ export const STYLED_LOOKS: StyledLook[] = [
     title: 'Manjal Sunshine',
     colorTheme: 'Golden Marigold & Vermilion',
     description: 'A radiant auspicious yellow drape designed for Mangalasnanam and morning pujas.',
-    modelImage: '/assets/exact_silk_card_4.png',
+    modelImage: '/assets/look_model_5.png',
     saree: {
       brand: 'NOOLAM — SAREE',
       name: 'Manjal Rudraksha Zari Saree',
       price: 78600,
-      image: '/assets/exact_silk_card_4.png'
+      image: '/assets/thumb_saree.png'
     },
     blouse: {
       brand: 'NOOLAM — BLOUSE',
       name: 'Vermilion Silk Thread Blouse',
       price: 12500,
-      image: '/assets/exact_blouse_detail_center.png'
+      image: '/assets/thumb_blouse.png'
     },
     choker: {
       brand: 'NOOLAM — CHOKER',
       name: 'Kundan Floral Collar Choker',
       price: 10500,
-      image: '/assets/exact_mood_5.png'
+      image: '/assets/thumb_choker.png'
     },
     jhumkas: {
       brand: 'NOOLAM — JHUMKAS',
       name: 'Marigold Drop Earrings',
       price: 8200,
-      image: '/assets/exact_mood_6.png'
+      image: '/assets/thumb_jhumkas.png'
     },
     ottiyanam: {
       brand: 'NOOLAM — OTTIYANAM',
       name: 'Slim Gold Link Ottiyanam',
       price: 15500,
-      image: '/assets/exact_mood_3.png'
+      image: '/assets/thumb_ottiyanam.png'
     },
     bangles: {
       brand: 'NOOLAM — BANGLES',
       name: 'Gold Filigree Choodiyan Stack',
       price: 9900,
-      image: '/assets/exact_mood_4.png'
+      image: '/assets/thumb_bangles.png'
     }
   },
   {
@@ -402,42 +402,42 @@ export const STYLED_LOOKS: StyledLook[] = [
     title: 'Vennila Pastel Lilac',
     colorTheme: 'Soft Amethyst & Liquid Silver',
     description: 'A contemporary aristocratic pastel weave with rare silver electroplated threadwork.',
-    modelImage: '/assets/exact_silk_card_5.png',
+    modelImage: '/assets/look_model_6.png',
     saree: {
       brand: 'NOOLAM — SAREE',
       name: 'Vennila Pastel Lilac Silk',
       price: 86500,
-      image: '/assets/exact_silk_card_5.png'
+      image: '/assets/thumb_saree_brocade.png'
     },
     blouse: {
       brand: 'NOOLAM — BLOUSE',
       name: 'Pearl Scattered Organza Blouse',
       price: 14000,
-      image: '/assets/exact_blouse_detail_center.png'
+      image: '/assets/thumb_blouse_gold.png'
     },
     choker: {
       brand: 'NOOLAM — CHOKER',
       name: 'Gutta Pusalu Basra Pearl Choker',
       price: 13500,
-      image: '/assets/exact_mood_6.png'
+      image: '/assets/thumb_choker.png'
     },
     jhumkas: {
       brand: 'NOOLAM — JHUMKAS',
       name: 'Basra Pearl Tassel Drops',
       price: 9800,
-      image: '/assets/exact_mood_2.png'
+      image: '/assets/thumb_jhumkas.png'
     },
     ottiyanam: {
       brand: 'NOOLAM — OTTIYANAM',
       name: 'Silver-Gold Plated Waist Chain',
       price: 17500,
-      image: '/assets/exact_mood_1.png'
+      image: '/assets/thumb_ottiyanam.png'
     },
     bangles: {
       brand: 'NOOLAM — BANGLES',
       name: 'Diamond Cut Pearl Bangles',
       price: 10800,
-      image: '/assets/exact_mood_5.png'
+      image: '/assets/thumb_bangles.png'
     }
   },
   {
@@ -446,7 +446,7 @@ export const STYLED_LOOKS: StyledLook[] = [
     title: 'Ivory Elephant',
     colorTheme: 'Ivory Cream & Antique Gold',
     description: 'Eight looks, styled head to toe. Tap a look to see the pieces.',
-    modelImage: '/assets/clean_try_look_model.png',
+    modelImage: '/assets/look_model_7.png',
     saree: {
       brand: 'NOOLAM — SAREE',
       name: 'Ivory Kanjivaram with Elephant Border',
@@ -490,42 +490,42 @@ export const STYLED_LOOKS: StyledLook[] = [
     title: 'Sengal Red Temple',
     colorTheme: 'Temple Brick Red & Pure Brocade',
     description: 'Heavy 850-gram pure mulberry silk with rich solid gold brocade pallu and body buttas.',
-    modelImage: '/assets/exact_try_look_model.png',
+    modelImage: '/assets/look_model_8.png',
     saree: {
       brand: 'NOOLAM — SAREE',
       name: 'Sengal Red Temple Arch Saree',
       price: 91000,
-      image: '/assets/exact_saree_detail_center.png'
+      image: '/assets/thumb_saree_check.png'
     },
     blouse: {
       brand: 'NOOLAM — BLOUSE',
       name: 'Heavy Aari Work Crimson Blouse',
       price: 15800,
-      image: '/assets/exact_blouse_detail_center.png'
+      image: '/assets/thumb_blouse.png'
     },
     choker: {
       brand: 'NOOLAM — CHOKER',
       name: 'Navaratna Traditional Choker',
       price: 14500,
-      image: '/assets/exact_mood_1.png'
+      image: '/assets/thumb_choker.png'
     },
     jhumkas: {
       brand: 'NOOLAM — JHUMKAS',
       name: 'Peacock Carved Jhumkas',
       price: 10500,
-      image: '/assets/exact_mood_3.png'
+      image: '/assets/thumb_jhumkas.png'
     },
     ottiyanam: {
       brand: 'NOOLAM — OTTIYANAM',
       name: 'Goddess Lakshmi Carved Belt',
       price: 18500,
-      image: '/assets/exact_mood_4.png'
+      image: '/assets/thumb_ottiyanam.png'
     },
     bangles: {
       brand: 'NOOLAM — BANGLES',
       name: 'Temple Coin Bangles (Set of 6)',
       price: 11800,
-      image: '/assets/exact_mood_2.png'
+      image: '/assets/thumb_bangles.png'
     }
   }
 ];

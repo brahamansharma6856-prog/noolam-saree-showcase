@@ -10,7 +10,7 @@ export default function TryTheLook() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { addToCart, toggleWishlist, isInWishlist } = useShop();
 
-  // Drag/swipe state
+  // Pointer Drag state
   const dragStartX = useRef<number | null>(null);
   const isDragging = useRef(false);
   const stageRef = useRef<HTMLDivElement>(null);
@@ -41,8 +41,12 @@ export default function TryTheLook() {
   const onPointerUp = (e: React.PointerEvent) => {
     if (dragStartX.current === null) return;
     const delta = e.clientX - dragStartX.current;
-    if (isDragging.current && Math.abs(delta) > 40) {
-      delta < 0 ? handleNext() : handlePrev();
+    if (isDragging.current && Math.abs(delta) > 35) {
+      if (delta < 0) {
+        handleNext();
+      } else {
+        handlePrev();
+      }
     }
     dragStartX.current = null;
     isDragging.current = false;
@@ -89,87 +93,94 @@ export default function TryTheLook() {
           </p>
         </div>
 
-        {/* Carousel & Panel */}
+        {/* Carousel Stage & Panel Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
 
-          {/* Left: Stage Carousel */}
+          {/* Left: Stage Carousel (7 Columns) */}
           <div className="lg:col-span-7 flex flex-col">
-            {/* Drag Stage */}
+            {/* White Stage Container with Drag Physics */}
             <div
               ref={stageRef}
-              className="relative flex-1 rounded-3xl overflow-hidden bg-stone-50 border border-stone-200 shadow-xl flex items-center justify-center cursor-grab active:cursor-grabbing select-none"
-              style={{ minHeight: '520px' }}
+              className="relative flex-1 rounded-3xl overflow-hidden bg-[#FAF8F5] border border-stone-200 shadow-xl flex items-center justify-center cursor-grab active:cursor-grabbing select-none"
+              style={{ minHeight: '540px' }}
               onPointerDown={onPointerDown}
               onPointerMove={onPointerMove}
               onPointerUp={onPointerUp}
             >
-              {currentIndex === 0 ? (
-                /* Authentic Stage with Ivory Elephant Center and Blurred Sides */
+              {/* Previous Model — blurred & faded on left */}
+              <div
+                onClick={handlePrev}
+                className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-[28%] h-[82%] cursor-pointer overflow-hidden z-0 transition-all duration-500 hover:opacity-50"
+                style={{
+                  filter: 'blur(3px)',
+                  opacity: 0.32,
+                  transform: 'translateY(-50%) scale(0.88)',
+                }}
+              >
                 <div className="relative w-full h-full">
                   <Image
-                    src="/assets/clean_try_look_stage.png"
-                    alt="NOOLAM Styled Look - Ivory Elephant"
+                    src={prevLook.modelImage}
+                    alt={prevLook.title}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 60vw"
-                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 30vw, 20vw"
+                    className="object-contain object-center"
+                  />
+                </div>
+              </div>
+
+              {/* Centre Model — Sharp, Dominant on Stage */}
+              <div
+                key={currentLook.id}
+                className="relative h-[92%] w-[58%] sm:w-[52%] overflow-hidden rounded-2xl z-10 transition-all duration-500 ease-out flex items-center justify-center"
+                style={{
+                  filter: 'drop-shadow(0 20px 30px rgba(0,0,0,0.18))',
+                }}
+              >
+                <div className="relative w-full h-full">
+                  <Image
+                    src={currentLook.modelImage}
+                    alt={currentLook.title}
+                    fill
+                    sizes="(max-width: 1024px) 70vw, 40vw"
+                    className="object-contain object-center"
                     priority
                   />
-                  <div className="absolute bottom-6 inset-x-8 text-white z-10">
-                    <span className="text-[10px] uppercase tracking-widest text-amber-300 font-semibold block drop-shadow-md">
+
+                  {/* Gradient bottom bar for title */}
+                  <div className="absolute inset-x-0 bottom-0 pt-16 pb-4 px-4 bg-gradient-to-t from-black/75 via-black/25 to-transparent rounded-b-2xl pointer-events-none text-center">
+                    <span className="text-[10px] uppercase tracking-widest text-amber-300 font-semibold block drop-shadow-sm">
                       {currentLook.colorTheme}
                     </span>
-                    <h3 className="font-serif text-2xl font-bold tracking-wide drop-shadow-md">
+                    <h3 className="font-serif text-xl sm:text-2xl font-bold tracking-wide text-white drop-shadow-sm">
                       {currentLook.title}
                     </h3>
                   </div>
                 </div>
-              ) : (
-                /* Dynamic Looks Carousel */
-                <>
-                  {/* Previous Model — left, blurred */}
-                  <div
-                    onClick={handlePrev}
-                    className="absolute left-0 top-0 w-[24%] h-full cursor-pointer overflow-hidden z-0"
-                    style={{ filter: 'blur(3px)', opacity: 0.35, transform: 'scale(0.88) translateX(-5%)', transformOrigin: 'left center' }}
-                  >
-                    <Image src={prevLook.modelImage} alt="Previous" fill className="object-cover object-top" />
-                  </div>
+              </div>
 
-                  {/* Centre Model — sharp, dominant */}
-                  <div
-                    className="relative h-[95%] overflow-hidden rounded-2xl shadow-2xl transition-all duration-500 ease-in-out z-10"
-                    style={{ width: '60%' }}
-                  >
-                    <Image
-                      key={currentLook.id}
-                      src={currentLook.modelImage}
-                      alt={currentLook.title}
-                      fill
-                      priority
-                      className="object-cover object-top"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-                    <div className="absolute bottom-5 inset-x-5 text-white">
-                      <span className="text-[10px] uppercase tracking-widest text-amber-300 font-semibold block">
-                        {currentLook.colorTheme}
-                      </span>
-                      <h3 className="font-serif text-2xl font-bold tracking-wide">{currentLook.title}</h3>
-                    </div>
-                  </div>
-
-                  {/* Next Model — right, blurred */}
-                  <div
-                    onClick={handleNext}
-                    className="absolute right-0 top-0 w-[24%] h-full cursor-pointer overflow-hidden z-0"
-                    style={{ filter: 'blur(3px)', opacity: 0.35, transform: 'scale(0.88) translateX(5%)', transformOrigin: 'right center' }}
-                  >
-                    <Image src={nextLook.modelImage} alt="Next" fill className="object-cover object-top" />
-                  </div>
-                </>
-              )}
+              {/* Next Model — blurred & faded on right */}
+              <div
+                onClick={handleNext}
+                className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-[28%] h-[82%] cursor-pointer overflow-hidden z-0 transition-all duration-500 hover:opacity-50"
+                style={{
+                  filter: 'blur(3px)',
+                  opacity: 0.32,
+                  transform: 'translateY(-50%) scale(0.88)',
+                }}
+              >
+                <div className="relative w-full h-full">
+                  <Image
+                    src={nextLook.modelImage}
+                    alt={nextLook.title}
+                    fill
+                    sizes="(max-width: 768px) 30vw, 20vw"
+                    className="object-contain object-center"
+                  />
+                </div>
+              </div>
             </div>
 
-            {/* Counter & nav */}
+            {/* Counter & Navigation Controls */}
             <div className="mt-5 flex items-center justify-between px-1">
               <span className="text-xs font-semibold tracking-widest uppercase text-stone-500">
                 {currentLook.number} · <strong className="text-stone-900">{currentLook.title}</strong>
@@ -196,33 +207,46 @@ export default function TryTheLook() {
             </div>
           </div>
 
-          {/* Right: "In this look" Panel */}
+          {/* Right: "In this look" Panel (5 Columns) */}
           <div className="lg:col-span-5 bg-[#FAF8F5] rounded-3xl p-6 sm:p-8 border border-stone-200 shadow-xl flex flex-col justify-between">
             <div>
               <div className="pb-4 border-b border-stone-200">
                 <h3 className="font-serif text-2xl font-bold text-stone-900">In this look</h3>
               </div>
 
+              {/* 6 Trousseau Items */}
               <div className="mt-3 divide-y divide-stone-200/80">
                 {itemsList.map((item) => {
                   const itemId = `${currentLook.id}-${item.key}`;
                   const fav = isInWishlist(itemId);
+
                   return (
                     <div key={item.key} className="py-3 flex items-center justify-between gap-3">
                       <div className="flex items-center gap-3 min-w-0">
-                        <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-white flex-shrink-0 border border-stone-300 shadow-sm">
-                          <Image src={item.image} alt={item.name} fill className="object-cover" />
+                        {/* Thumbnail — Clean isolated product swatch */}
+                        <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-white flex-shrink-0 border border-stone-300 shadow-sm p-0.5">
+                          <Image src={item.image} alt={item.name} fill className="object-cover rounded-lg" />
                         </div>
                         <div className="min-w-0">
-                          <span className="text-[9px] font-bold tracking-wider uppercase text-stone-500 block">{item.brand}</span>
-                          <h4 className="text-xs font-semibold text-stone-900 truncate">{item.name}</h4>
-                          <span className="text-xs font-bold text-stone-800">₹{item.price.toLocaleString('en-IN')}</span>
+                          <span className="text-[9px] font-bold tracking-wider uppercase text-stone-500 block truncate">
+                            {item.brand}
+                          </span>
+                          <h4 className="text-xs font-semibold text-stone-900 truncate">
+                            {item.name}
+                          </h4>
+                          <span className="text-xs font-bold text-stone-800">
+                            ₹{item.price.toLocaleString('en-IN')}
+                          </span>
                         </div>
                       </div>
+
+                      {/* Heart Wishlist & Plus Add-to-bag */}
                       <div className="flex items-center gap-1.5 flex-shrink-0">
                         <button
                           onClick={() => toggleWishlist(itemId, item.name)}
-                          className={`p-2 rounded-full transition-colors ${fav ? 'text-red-600 bg-red-50' : 'text-stone-400 hover:text-red-500 hover:bg-stone-100'}`}
+                          className={`p-2 rounded-full transition-colors ${
+                            fav ? 'text-red-600 bg-red-50' : 'text-stone-400 hover:text-red-500 hover:bg-stone-100'
+                          }`}
                           title="Wishlist"
                         >
                           <Heart className={`w-4 h-4 ${fav ? 'fill-current' : ''}`} />
@@ -241,7 +265,7 @@ export default function TryTheLook() {
               </div>
             </div>
 
-            {/* Bundle box */}
+            {/* Complete the look Bundle Box */}
             <div className="mt-6 pt-5 border-t border-stone-200">
               <div className="flex items-center justify-between mb-2">
                 <div>

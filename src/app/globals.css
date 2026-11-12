@@ -1,26 +1,153 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #fdfbf7;
+    --foreground: #1c1917;
+    --maroon: #6e1327;
+    --maroon-dark: #460916;
+    --gold: #d4af37;
+    --gold-light: #f3e5ab;
+    --gold-dark: #a17a28;
+    --ivory: #faf7f2;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Scrollbars */
+::-webkit-scrollbar { width: 7px; height: 7px; }
+::-webkit-scrollbar-track { background: #f4efe6; }
+::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #a17a28; }
+
+/* Hide scrollbar utility */
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Temple Arch & Gopuram Curves */
+.gopuram-arch {
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+}
+
+/* ===================== TICKER ===================== */
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  display: flex;
+  width: 200%;
+  animation: ticker 30s linear infinite;
+  will-change: transform;
+}
+.animate-ticker:hover { animation-play-state: paused; }
+
+/* ===================== VERTICAL SCROLLING ===================== */
+@keyframes scrollUp {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes scrollDown {
+  0%   { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+.animate-scroll-up {
+  animation: scrollUp 24s linear infinite;
+  will-change: transform;
+}
+.animate-scroll-down {
+  animation: scrollDown 24s linear infinite;
+  will-change: transform;
+}
+.animate-scroll-up:hover,
+.animate-scroll-down:hover { animation-play-state: paused; }
+
+/* ===================== FADE IN ===================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fadeIn 0.3s ease-out both; }
+
+/* ===================== GOLD GRADIENT TEXT ===================== */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #d4af37 0%, #f7e7a9 50%, #b8860b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===================== MAROON→GOLD GRADIENT TEXT ===================== */
+.maroon-gold-gradient {
+  background: linear-gradient(135deg, #6e1327 20%, #a12b3f 50%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===================== GLASS PILL NAVBAR ===================== */
+.glass-pill {
+  background: rgba(18, 10, 14, 0.72);
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.glass-pill:hover {
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+/* ===================== GOLD GLOW PULSE ===================== */
+@keyframes goldPulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); }
+  50%       { box-shadow: 0 0 30px rgba(212, 175, 55, 0.6); }
+}
+.gold-glow { animation: goldPulse 3s ease-in-out infinite; }
+
+/* ===================== HANGER LIFT ANIMATION ===================== */
+@keyframes hangerLift {
+  0%   { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-12px) scale(1.07); }
+}
+
+/* ===================== CARD TILT 3D ===================== */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.08s ease-out;
+}
+
+/* ===================== BRIDAL ARC CARDS ===================== */
+@keyframes shimmerGold {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.gold-shimmer {
+  background: linear-gradient(90deg, #d4af37, #f7e7a9, #d4af37);
+  background-size: 200% 100%;
+  animation: shimmerGold 3s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===================== REEL PROGRESS BAR ===================== */
+.reel-progress {
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(to right, #d4af37, #f7e7a9);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.7);
+  transition: width 0.3s linear;
 }
